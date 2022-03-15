@@ -1,0 +1,61 @@
+Buscas / abas
+    Python decorators
+    Progamador júnior Python
+    Americana carreiras
+    Python json
+    Python selenium
+    API
+    Como gerar número para emulador de wathsapp
+
+
+Resolvido
+    Qual o melhor banco digital
+    Investimentos Inter
+    Investimentos C6
+
+Pipoca; n89; n56.
+
+
+Melhores bancos digitais
+    ITI
+    Inter - melhor pra investir
+    Next
+    C6 - melhor, melhor cartão
+    BB universitário - R$ 1,500 em crédito sem comprovação de renda
+
+
+Se não for resolvido até a virada e vier cobrando de novo na próxima fatura, vou involver o judiciário. 
+Estava querendo evitar isso porque vou esquentr a cabeça, mas pelo menos sei que vou ganhar alguma coisa porque isso
+que vocês estão fazendo é muito errado.
+
+
+Plano
+    devemos criar um arquivo só declarando as nossa clases e métodos / funções deixando pra implementá-las depois?
+
+    Refatorar os códigos do crazy {k}night e do Mass Invader em Python e upá-los no git pra usar como portifólio.
+    Reescrever os códigos e comentários em português e inglês, com dockstrings e typehinting.
+    Criar ranks em um documentos txt. Teste criar um dicionário com nome e pontuacao e usar o sort para ordenar pela pontuação
+
+    Estudar html, css e javasript.
+    Recriar o Mass invader em css e javascript e criar um site maneiríssimo pra usar como portifólio de devweb
+    Criar uma aba no site chamada "por trás de Mass Invader" contando que sou estudante de ciência da computação, apaixonado por 
+    jogos, fan de Mass Effect e esta foi uma forma de por em prática o que tenho aprendido e ao mesmo tempo fazer uma homenagem 
+    ao meu jogo favorito.
+
+
+Webdev
+    Melhor leitura: 
+        10 a 14 palavras por linha
+        Espaçamento entre linhas igual a 1.5 vezes o tamanho da fonte
+        
+        Negrito destaca palavras importantes
+        Itálico estiliza citações, títulos de livros / filmes, etc
+        Sublinhado destaca palavra com links, quando passado o mouse
+        Caixa alta em título, não utilize no corpo do texto
+        Utilize só um elemento para destacar uma palavra
+
+
+Notas
+    Se você morresse hoje e te fosse pasado um filme sobre a tua vida, você assistiria esse filme em paz?
+    A vida se resume a isso, devemos viver de uma forma que possamos sentar e assisitir o filme sobre ela em paz 
+    quando chegar a hora
