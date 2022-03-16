@@ -14,7 +14,7 @@ while dificuldade not in ('1', '2', '3'):
 
 
 if dificuldade == '1':
-    j = Jogador(20) 
+    j = Jogador(vida_max := 20) 
     vida_perdida = 0
     
     while True:
@@ -36,7 +36,7 @@ if dificuldade == '1':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / 20 * 100)}%{'-' * vida_perdida}[")
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -45,7 +45,7 @@ if dificuldade == '1':
 
 
 if dificuldade == '2':
-    j = Jogador(16) 
+    j = Jogador(vida_max := 16) 
     vida_perdida = 0
     
     while True:
@@ -67,7 +67,7 @@ if dificuldade == '2':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / 16 * 100)}%{'-' * vida_perdida}[")
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -76,7 +76,7 @@ if dificuldade == '2':
 
 
 if dificuldade == '3':
-    j = Jogador(12) 
+    j = Jogador(vida_max := 12) 
     vida_perdida = 0
     
     while True:
@@ -98,9 +98,10 @@ if dificuldade == '3':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / 12 * 100)}%{'-' * vida_perdida}[")
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
             print(f'\nSua pontuação é: {j.pontuacao}')
             break
+
