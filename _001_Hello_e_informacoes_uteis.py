@@ -1,6 +1,5 @@
 """início do curso"""
 
-
 print("HELLO WORLD")
 import this
 
