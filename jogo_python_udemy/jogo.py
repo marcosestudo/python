@@ -24,8 +24,6 @@ else:
 
 vida_perdida = 0
 
-vida = f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}["
-
 
 if dificuldade == '1':
     while True:
@@ -36,8 +34,8 @@ if dificuldade == '1':
             resposta = input(f'\n{a} + {b} = ')
             
             while resposta not in checagem:
-                # checagem = (str(x) for x in range(1000000))
-                resposta = input('Insira um número inteiro')
+                checagem = (str(x) for x in range(1000000))
+                resposta = input('Insira um número inteiro\n')
 
             if int(resposta) == a + b:
                 print('\ncorreto\n')
@@ -47,7 +45,10 @@ if dificuldade == '1':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(vida)
+        print(f'{j.vida= }')
+        print(f'{vida_perdida= }')
+
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -64,8 +65,8 @@ if dificuldade == '2':
             resposta = input(f'\n{a} + {b} = ')
             
             while resposta not in checagem:
-                # checagem = (str(x) for x in range(1000000))
-                resposta = input('Insira um número inteiro')
+                checagem = (str(x) for x in range(1000000))
+                resposta = input('Insira um número inteiro\n')
 
             if int(resposta) == a + b:
                 print('\ncorreto\n')
@@ -75,7 +76,7 @@ if dificuldade == '2':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(vida)
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -92,8 +93,8 @@ if dificuldade == '3':
             resposta = input(f'\n{a} + {b} = ')
             
             while resposta not in checagem:
-                # checagem = (str(x) for x in range(1000000))
-                resposta = input('Insira um número inteiro')
+                checagem = (str(x) for x in range(1000000))
+                resposta = input('Insira um número inteiro\n')
 
             if int(resposta) == a + b:
                 print('\ncorreto\n')
@@ -103,10 +104,9 @@ if dificuldade == '3':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(vida)
+        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
             print(f'\nSua pontuação é: {j.pontuacao}')
             break
-
