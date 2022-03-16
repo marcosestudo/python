@@ -11,23 +11,20 @@ dificuldade = input('''Escolha a dificuldade: digite 1, 2 ou 3
                        ''')
 
 
-
 if dificuldade == '1':
-    vida_perdida = 0    
-    vida = f"vida ]{'|' * (20 - vida_perdida)}{' ' * vida_perdida}["
-    print(vida)
-    print(pontuacao)    
+    vida, vida_perdida = 20, 0  
+    while True:
+        if random.choice([1, 2, 3]) == 1 or 2 or 3:
+            a, b = random.randint(0, 9), random.randint(0, 9)
+            
+            if resposta := int(input(f'{a} + {b} = ')) == a + b:
+                pontuacao += 1
+            else:
+                vida_perdida += 4
+                vida -= 4
 
-    if random.choice([1, 2, 3]) == 1 or 2 or 3:
-        pergunta = random.randint(0, 9) + random.randint(0, 9)
-        print(pergunta)
-        resposta = input('Resposta: ')
-        if resposta == pergunta:
-            pontuacao += 1
-        else:
-            vida_perdida += 4
-        print(f'pontuacao {pontuacao}')
-        print(f'vida_perdida {vida_perdida}')
+        print(f"Vida ]{'|' * (20 - vida_perdida)}{' ' * vida_perdida}[")
+        print(f'Pontuacao {pontuacao}')
 
-    print(vida)
-    print(f'Pontuação: {pontuacao}')
+        if vida == 0:
+            break
