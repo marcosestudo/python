@@ -15,8 +15,19 @@ while dificuldade not in ('1', '2', '3'):
 
 if dificuldade == '1':
     j = Jogador(vida_max := 20) 
-    vida_perdida = 0
-    
+
+elif dificuldade == '2':
+    j = Jogador(vida_max := 16) 
+
+else:
+    j = Jogador(vida_max := 12) 
+
+vida_perdida = 0
+
+vida = f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}["
+
+
+if dificuldade == '1':
     while True:
         # cehcagem testa se o input é um um número entre 0 e 1_000_000
         checagem = (str(x) for x in range(1000000))
@@ -36,7 +47,7 @@ if dificuldade == '1':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida)
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -45,9 +56,6 @@ if dificuldade == '1':
 
 
 if dificuldade == '2':
-    j = Jogador(vida_max := 16) 
-    vida_perdida = 0
-    
     while True:
         # cehcagem testa se o input é um um número entre 0 e 1_000_000
         checagem = (str(x) for x in range(1000000))
@@ -67,7 +75,7 @@ if dificuldade == '2':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida)
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -76,9 +84,6 @@ if dificuldade == '2':
 
 
 if dificuldade == '3':
-    j = Jogador(vida_max := 12) 
-    vida_perdida = 0
-    
     while True:
         # cehcagem testa se o input é um um número entre 0 e 1_000_000
         checagem = (str(x) for x in range(1000000))
@@ -98,7 +103,7 @@ if dificuldade == '3':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida)
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
