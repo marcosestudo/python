@@ -2,6 +2,11 @@ import random
 from jogador import Jogador
 
 
+def vida(vida: int, vida_max: int, vida_perdida: int) -> str:
+    """retorna a barra de vida para ser printada"""
+    return f"Vida: ]{'|' * (vida)}{int(vida / vida_max * 100)}%{'-' * vida_perdida}["
+
+
 dificuldade = None
 
 
@@ -45,10 +50,7 @@ if dificuldade == '1':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f'{j.vida= }')
-        print(f'{vida_perdida= }')
-
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida(j.vida, vida_max, vida_perdida))
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -76,7 +78,7 @@ if dificuldade == '2':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida(j.vida, vida_max, vida_perdida))
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
@@ -104,7 +106,7 @@ if dificuldade == '3':
                 vida_perdida += 4
                 j.vida -= 4
 
-        print(f"Vida: ]{'|' * (j.vida)}{int(j.vida / vida_max * 100)}%{'-' * vida_perdida}[")
+        print(vida(j.vida, vida_max, vida_perdida))
         print(f'Pontuacao: {j.pontuacao}\n')
 
         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
