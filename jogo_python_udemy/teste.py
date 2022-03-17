@@ -1,7 +1,12 @@
 from csv import DictReader
 from csv import DictWriter
 
+
 def atualizar_rank(pontuacao: int, nome: str, adicionado: int = 0) -> None:
+    """Recebe a pontuação e o nome do jogador, adiciona no ranke e o coloca em ordem.
+    O parâmetro "adicionado" diz se o elemento já foi adicionado à lista parar evitar 
+    repetição no caso de empate.    
+    """
     lista = []
 
     with open('rank.csv', 'a', encoding='utf_8', newline='') as arquivo:
@@ -19,25 +24,17 @@ def atualizar_rank(pontuacao: int, nome: str, adicionado: int = 0) -> None:
     rank_ordenado = []
     for i in range(len(lista)):
         for j in range(len(rank)):
-            print(rank[j])
             if int(rank[j]['Pontuação']) == lista[i] and not int(rank[j]['Adicionado']):
                 rank_ordenado.append(rank[j])
                 rank[j]['Adicionado'] = 1
+
+    # zerando os "adicionados" para gravar no documento com todos zerados para a próxima atualização do rank
+    for rank in rank_ordenado:
+        rank['Adicionado'] = 0
+
 
     with open('rank.csv', 'w', encoding='utf_8', newline='') as arquivo:
         escritor_csv = DictWriter(arquivo, fieldnames=['Pontuação', 'Nome', 'Adicionado'])
         escritor_csv.writeheader()
         for i in range(len(rank_ordenado) - 1, -1, -1):
             escritor_csv.writerow(rank_ordenado[i])
-
-
-atualizar_rank(32, 'teste')
-
-"""
-Pontuação,Nome
-5,e,False
-2,b,False
-4,d,False
-1,a,False
-3,c,False
-"""
