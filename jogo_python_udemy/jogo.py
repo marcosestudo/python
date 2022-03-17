@@ -9,19 +9,22 @@ def vida(vida: int, vida_max: int, vida_perdida: int) -> str:
     return f"Vida: ]{'|' * (vida)}{int(vida / vida_max * 100)}%{'-' * vida_perdida}["
 
 
-def dificuldade(dif):
+def dificuldade(dif: int, jogador: Jogador):
     """Retorna o valores mínimos e máximos e as operações possiveis de acordo com o nível de dificuldade"""
-    if dif == 1:
+    if dif == '1':
+        jogador.vida = 20
         min = -10
         max = 10
         mult = div = False
 
-    elif dif == 2:
+    elif dif == '2':
+        jogador.vida = 16
         min = -100
         max = 100
         mult = div = True
 
-    elif dif == 3:
+    elif dif == '3':
+        jogador.vida = 10
         min = -100
         max = 100
         mult = div = True
@@ -51,117 +54,31 @@ def operacao(min: int, max: int, mult: bool, div: bool, operacao: int = randint(
         print(f'{a * (multiplicador := randint(5, 10))} / {b} = ', end='')
         return a * multiplicador // b
 
+dificuldade_escolhida = None
 
-dif = dificuldade(1)
-for i in range(10):
-    print(operacao(dif[0], dif[1], dif[2], dif[3]))
+j = Jogador()
 
-
-# dificuldade = None
-
-
-# while dificuldade not in ('1', '2', '3'):
-#     dificuldade = input('''Escolha a dificuldade: digite 1, 2 ou 3
-#                        1 para fácil
-#                        2 para média
-#                        3 para difícil
-#                        ''')
+while dificuldade_escolhida not in ('1', '2', '3'):
+    dificuldade_escolhida = input('''
+    Escolha a dificuldade: digite 1, 2 ou 3
+                           1 para fácil
+                           2 para média
+                           3 para difícil
+                           ''')
+dif = dificuldade(dificuldade_escolhida, j)
 
 
-# if dificuldade == '1':
-#     j = Jogador(vida_max := 20) 
+while True:
+    print()
+    gabarito = operacao(dif[0], dif[1], dif[2], dif[3], randint(1, 4))
+    if resposta := int(input()) == gabarito:
+        j.pontuacao += 1        
+    else:
+        j.vida -= 4
 
-# elif dificuldade == '2':
-#     j = Jogador(vida_max := 16) 
+    print(f'{j.pontuacao}\n{j.vida}')
+    
 
-# else:
-#     j = Jogador(vida_max := 12) 
-
-# vida_perdida = 0
-
-# operacao = None
-
-
-# if dificuldade == '1':
-#     while True:
-#         # cehcagem testa se o input é um um número entre 0 e 1_000_000
-#         checagem = (str(x) for x in range(1000000))
-
-#         if random.choice([1, 2, 3]) == 1 or 2 or 3:
-#             a, b = randint(0, 9), randint(0, 9)
-#             resposta = input(f'\n{a} + {b} = ')
-            
-#             while resposta not in checagem:
-#                 checagem = (str(x) for x in range(1000000))
-#                 resposta = input('Insira um número inteiro\n')
-
-#             if int(resposta) == a + b:
-#                 print('\ncorreto\n')
-#                 j.pontuacao += 1
-#             else:
-#                 print('\nerrado\n')
-#                 vida_perdida += 4
-#                 j.vida -= 4
-
-#         print(vida(j.vida, vida_max, vida_perdida))
-#         print(f'Pontuacao: {j.pontuacao}\n')
-
-#         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
-#             print(f'\nSua pontuação é: {j.pontuacao}')
-#             break
-
-
-# if dificuldade == '2':
-#     while True:
-#         # cehcagem testa se o input é um um número entre 0 e 1_000_000
-#         checagem = (str(x) for x in range(1000000))
-#         if random.choice([1, 2, 3]) == 1 or 2 or 3:
-#             a, b = randint(0, 99), randint(0, 99)
-#             resposta = input(f'\n{a} + {b} = ')
-            
-#             while resposta not in checagem:
-#                 checagem = (str(x) for x in range(1000000))
-#                 resposta = input('Insira um número inteiro\n')
-
-#             if int(resposta) == a + b:
-#                 print('\ncorreto\n')
-#                 j.pontuacao += 1
-#             else:
-#                 print('\nerrado\n')
-#                 vida_perdida += 4
-#                 j.vida -= 4
-
-#         print(vida(j.vida, vida_max, vida_perdida))
-#         print(f'Pontuacao: {j.pontuacao}\n')
-
-#         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
-#             print(f'\nSua pontuação é: {j.pontuacao}')
-#             break
-
-
-# if dificuldade == '3':
-#     while True:
-#         # cehcagem testa se o input é um um número entre 0 e 1_000_000
-#         checagem = (str(x) for x in range(1000000))
-#         if random.choice([1, 2, 3]) == 1 or 2 or 3:
-#             a, b = randint(0, 999), randint(0, 999)
-#             resposta = input(f'\n{a} + {b} = ')
-            
-#             while resposta not in checagem:
-#                 checagem = (str(x) for x in range(1000000))
-#                 resposta = input('Insira um número inteiro\n')
-
-#             if int(resposta) == a + b:
-#                 print('\ncorreto\n')
-#                 j.pontuacao += 1
-#             else:
-#                 print('\nerrado\n')
-#                 vida_perdida += 4
-#                 j.vida -= 4
-
-#         print(vida(j.vida, vida_max, vida_perdida))
-#         print(f'Pontuacao: {j.pontuacao}\n')
-
-#         if j.vida == 0 or input('Continuar? s / n\n' ) == 'n':
-#             print(f'\nSua pontuação é: {j.pontuacao}')
-#             break
+# dif = dificuldade(1)
+# for i in range(10):
+#     print(operacao(dif[0], dif[1], dif[2], dif[3]))

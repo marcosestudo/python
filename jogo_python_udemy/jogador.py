@@ -1,6 +1,6 @@
 class Jogador:
 
-    def __init__(self, vida: int, pontuacao: int = 0):
+    def __init__(self, vida: int = None, pontuacao: int = 0):
         self.__vida = vida
         self.__pontuacao = pontuacao
         
