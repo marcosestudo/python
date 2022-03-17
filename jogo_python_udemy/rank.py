@@ -38,3 +38,48 @@ print(rank[0])
 # with open('rank_ordenado.txt', 'w', encoding='utf8') as arquivo:
 #     for linha in linhas_ordenadas:
 #         arquivo.write(str(linha) + '\n')
+
+"""
+from csv import DictReader
+from csv import DictWriter
+
+def atualizar_rank(pontuacao, nome):
+    lista = []
+
+    # with open('rank.csv', 'a', encoding='utf_8', newline='') as arquivo:
+    #     escritor_csv = DictWriter(arquivo, fieldnames=['Pontuação', 'Nome'])
+    #     escritor_csv.writerow(pontuacao, nome)
+
+    with open('rank.csv', encoding='utf_8') as arquivo:
+        rank = list(DictReader(arquivo, delimiter=','))
+
+    for i in rank:
+        lista.append(int(i['Pontuação']))
+        
+    lista.sort()
+
+    rank_ordenado = []
+    for i in range(len(lista)):
+        for i in range(len(rank)):
+            if int(rank[i]['Pontuação']) == lista[i]:
+                rank_ordenado.append(rank[i])
+
+    with open('rank_ordenado.csv', 'w', encoding='utf_8', newline='') as arquivo:
+        escritor_csv = DictWriter(arquivo, fieldnames=['Pontuação', 'Nome'])
+        escritor_csv.writeheader()
+        for i in range(len(rank_ordenado) - 1, -1, -1):
+            escritor_csv.writerow(rank_ordenado[i])
+
+    print(pontuacao, nome)
+
+atualizar_rank('asd', 100)
+
+""" 
+"""
+Pontuação,Nome
+5,e
+2,b
+4,d
+1,a
+3,c
+"""
