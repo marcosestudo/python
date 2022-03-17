@@ -22,7 +22,7 @@ def dificuldade(dif: int, jogador: Jogador) -> list:
         mult = div = True
 
     elif dif == '3':
-        jogador.vida = vida_max = 10
+        jogador.vida = vida_max = 12
         min = -100
         max = 100
         mult = div = True
