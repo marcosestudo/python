@@ -1,5 +1,7 @@
 from random import randint, random
+from tkinter.tix import Tree
 from jogador import Jogador
+
 
 # não esquecer de trocar essa função po ruma lambda
 def vida(vida: int, vida_max: int, vida_perdida: int) -> str:
@@ -7,22 +9,53 @@ def vida(vida: int, vida_max: int, vida_perdida: int) -> str:
     return f"Vida: ]{'|' * (vida)}{int(vida / vida_max * 100)}%{'-' * vida_perdida}["
 
 
-def operacao(a: int, b: int, operacao: int = randint(1, 4)) -> int:
+def dificuldade(dif):
+    """Retorna o valores mínimos e máximos e as operações possiveis de acordo com o nível de dificuldade"""
+    if dif == 1:
+        min = -10
+        max = 10
+        mult = div = False
+
+    elif dif == 2:
+        min = -100
+        max = 100
+        mult = div = True
+
+    elif dif == 3:
+        min = -100
+        max = 100
+        mult = div = True
+
+    return min, max, mult, div
+
+
+def operacao(min: int, max: int, mult: bool, div: bool, operacao: int = randint(1, 4)) -> int:
+    a, b = randint(min, max), randint(min, max) 
+
     if operacao == 1:
         print(f'{a} + {b} = ', end='')
         return a + b
+
     elif operacao == 2:
-        print(f'{a} - {b} = ', end='')
-        return a - b
+        # abs pra não ter dois sinais de menos como "a - -b", por exemplo
+        print(f'{a} - {abs(b)} = ', end='')
+        return a - abs(b)
+
     elif operacao == 3:
         print(f'{a} * {b} = ', end='')
         return a * b
+
     if operacao == 4:
         while a < b or b == 0:
             a = b = randint(1, 9)
         print(f'{a * (multiplicador := randint(5, 10))} / {b} = ', end='')
         return a * multiplicador // b
-            
+
+
+dif = dificuldade(1)
+for i in range(10):
+    print(operacao(dif[0], dif[1], dif[2], dif[3]))
+
 
 # dificuldade = None
 
