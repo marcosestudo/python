@@ -24,11 +24,11 @@ dif = dificuldade(dificuldade_escolhida, j)
 while True:
     print()
 
-    gabarito = operacao(dif[0], dif[1], dif[2], dif[3], randint(1, 4))
+    gabarito = operacao(dif['min'], dif['max'], dif['mult'], dif['div'], randint(1, 4))
 
     # no nível fácil não tem operacões de multiplicação e divisão, se cair uma delas rotrnara None e operacao() será reexecutada
     while gabarito == None:
-        gabarito = operacao(dif[0], dif[1], dif[2], dif[3], randint(1, 4))
+        gabarito = operacao(dif['min'], dif['max'], dif['mult'], dif['div'], randint(1, 4))
     resposta = input()
 
     # checagem = (x for x in range(-1000000, 1000000))
@@ -43,7 +43,7 @@ while True:
         vida_perdida += 4
         j.vida -= 4
 
-    print(f'\nPontuacao: {j.pontuacao}\nVida: {vida(j.vida, dif[4], vida_perdida)}\n')
+    print(f"\nPontuacao: {j.pontuacao}\nVida: {vida(j.vida, dif['vida_max'], vida_perdida)}\n")
 
 
     if j.vida <= 0 or input('Continuar: s / n\n') == 'n':

@@ -7,7 +7,7 @@ def vida(vida: int, vida_max: int, vida_perdida: int) -> str:
     return f"]{'|' * (vida)}{int(vida / vida_max * 100)}%{'-' * vida_perdida}["
 
 
-def dificuldade(dif: int, jogador: Jogador) -> list:
+def dificuldade(dif: int, jogador: Jogador) -> dict:
     """Retorna o valores mínimos e máximos e as operações possiveis de acordo com o nível de dificuldade"""
     if dif == '1':
         jogador.vida = vida_max = 20
@@ -27,7 +27,7 @@ def dificuldade(dif: int, jogador: Jogador) -> list:
         max = 100
         mult = div = True
 
-    return min, max, mult, div, vida_max
+    return {'min' : min, 'max' : max, 'mult' : mult, 'div' : div, 'vida_max' : vida_max}
 
 
 def operacao(min: int, max: int, mult: bool, div: bool, operacao: int = randint(1, 4)) -> int:
