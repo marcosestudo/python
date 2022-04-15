@@ -1,5 +1,5 @@
 '''
-O método super() se refere à super classe
+O método super() se refere à super classe que será herdada pelas classes herdeiras
 '''
 
 

@@ -18,3 +18,4 @@ def valor_da_string(string):
 
 
 print(valor_da_string(''))
+input()
