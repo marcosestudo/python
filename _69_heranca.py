@@ -5,7 +5,8 @@ Herança - Inheritance
 
 Herança vem da ideia de reaproveitar código e extender as classes
 Com a herança, a partir de uma classe existente, extendemos outra classe que passa a herdar seus atributos e métodos
-
+As duas classes devem ter uma relação de "é um"
+Ex: todo funcionáro é uma pessoa
 
 Imaginemos um sistema de um banco som as entidades cliente e funcionário
 
